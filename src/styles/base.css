@@ -31,6 +31,7 @@
   body {
     @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
+    background-image: url("src/assets/images/Pinterest.jpg");
   }
   section,
   footer {
@@ -93,6 +94,9 @@
   /* ===== scrollbar ===== */
   html {
     overflow-y: scroll;
+    font-size: 20px;
+    font-weight: 560;
+    font-family: 'Roboto', sans-serif;
   }
 
   /* width */
@@ -122,6 +126,9 @@
 
   pre > code {
     white-space: pre;
+  }
+  .main-content{
+    background-color: #f0f0f1;
   }
 }
 
