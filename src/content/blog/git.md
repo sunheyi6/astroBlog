@@ -4,7 +4,7 @@ tags:
   - git
 pubDatetime: 2021-04-18 09:10:24
 author: 孙贺毅
-slug: 我的人生目标
+slug: git
 featured: false
 ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png
 description: ""
