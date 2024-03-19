@@ -13,7 +13,8 @@
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "cz": "cz",
     "prepare": "husky install",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "mocha"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
@@ -22,6 +23,8 @@
     "astro": "^4.4.12",
     "fuse.js": "^7.0.0",
     "github-slugger": "^2.0.0",
+    "mocha": "^10.3.0",
+    "pinyin": "^4.0.0-alpha.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
     "satori": "^0.10.11",
