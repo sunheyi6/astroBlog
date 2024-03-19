@@ -7,7 +7,7 @@ export const SITE: Site = {
   title: "孙贺毅的博客",
   ogImage: "ogImage.jpg",
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 10,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
