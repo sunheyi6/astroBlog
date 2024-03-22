@@ -3,8 +3,8 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://sunheyi.com", // replace this with your deployed domain
   author: "孙贺毅",
-  desc: "记录自己的思考和总结",
-  title: "个人博客",
+  desc: "流殃",
+  title: "流殃",
   ogImage: "",
   lightAndDarkMode: true,
   postPerPage: 10,
