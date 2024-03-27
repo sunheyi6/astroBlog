@@ -13,12 +13,13 @@ export const SITE: Site = {
 
 export const LOCALE = {
   lang: "zh", // html lang code. Set this empty and default will be "en"
-  langTag: ["zh-ZH"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+  langTag: ["zh-CN"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+  timeZone: ["Asia/Shanghai"]
 } as const;
 
 export const LOGO_IMAGE = {
   enable: false,
-  svg: true,
+  svg: false,
   width: 216,
   height: 46,
 };
