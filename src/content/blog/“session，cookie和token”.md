@@ -9,10 +9,6 @@ ogImage: https://top-img.pupper.cn/top-img/top-img-98.webp
 
 ---
 
-简单介绍 session，cookie和token
-
-<!-- more -->
-
 ## http
 
 什么是无状态呢？就是说这一次请求和上一次请求是没有任何关系的，互不认识的，没有关联的。这种无状态的的好处是快速。坏处是假如我们想要把`www.zhihu.com/login.html`和`www.zhihu.com/index.html`关联起来，必须使用某些手段和工具
