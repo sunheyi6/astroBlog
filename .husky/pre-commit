@@ -1,29 +1,34 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 # Modified files, update the modDatetime
+echo "Entering pre-commit script"
 git diff --cached --name-status |
 grep -i '^M.*\.md$' |
 while read _ file; do
   filecontent=$(cat "$file")
   frontmatter=$(echo "$filecontent" | awk -v RS='---' 'NR==2{print}')
   draft=$(echo "$frontmatter" | awk '/^draft: /{print $2}')
+  echo "Processing file: $file"
   if [ "$draft" = "false" ]; then
-    echo "$file modDateTime updated"
+    echo "Updating modDatetime for file: $file"
     cat $file | sed "/---.*/,/---.*/s/^modDatetime:.*$/modDatetime: $(date -u "+%Y-%m-%dT%H:%M:%SZ")/" > tmp
     mv tmp $file
     git add $file
   fi
   if [ "$draft" = "first" ]; then
-    echo "First release of $file, draft set to false and modDateTime removed"
+    echo "First release of file: $file, setting draft to false and removing modDatetime"
     cat $file | sed "/---.*/,/---.*/s/^modDatetime:.*$/modDatetime:/" | sed "/---.*/,/---.*/s/^draft:.*$/draft: false/" > tmp
     mv tmp $file
     git add $file
   fi
 done
 # New files, add/update the pubDatetime
+echo "Processing new files"
 git diff --cached --name-status | egrep -i "^(A).*\.(md)$" | while read a b; do
+  echo "Updating pubDatetime for new file: $b"
   cat $b | sed "/---.*/,/---.*/s/^pubDatetime:.*$/pubDatetime: $(date -u "+%Y-%m-%dT%H:%M:%SZ")/" > tmp
   mv tmp $b
   git add $b
 done
 npx lint-staged
+echo "Leaving pre-commit script"
