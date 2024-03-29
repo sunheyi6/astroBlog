@@ -6,6 +6,7 @@ git diff --cached --name-status |
 grep -i '^M.*\.md$' |
 while read _ file; do
   filecontent=$(cat "$file")
+  echo "diff file: $file"
   frontmatter=$(echo "$filecontent" | awk -v RS='---' 'NR==2{print}')
   draft=$(echo "$frontmatter" | awk '/^draft: /{print $2}')
   echo "Processing file: $file"
